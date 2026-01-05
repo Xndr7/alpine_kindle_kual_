@@ -2,7 +2,7 @@
 cd /mnt/us/extensions/kindle_copyparty
 echo "*** Deploying / Updating Alpine Linux ***"
 
-ALPINE_BASE_FOLDER="/mnt/us/extensions/kindle_copyparty"
+ALPINE_BASE_FOLDER="/mnt/us/extensions/kindle_copyparty/"
 
 deploy_alpine()
 {
