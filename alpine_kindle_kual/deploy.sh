@@ -21,7 +21,7 @@ deploy_alpine()
 	if ! curl -L $ALPINE_URL --output "$BASE_FOLDER/kindle_copyparty.zip" ; then
 		# failed
 		echo "Failed to download from $ALPINE_URL"
-		sh press_any_key.sh
+		sh /mnt/us/extensions/kindle_copyparty_kual/press_any_key.sh
 		lipc-set-prop com.lab126.powerd preventScreenSaver 0
 		exit
 	fi;
@@ -35,7 +35,7 @@ deploy_alpine()
 	PERCENTAGE_TO_BE_USED="$(($KB_REQUIRED*100/$KB_FREE))"
 	if [ "$PERCENTAGE_TO_BE_USED" -gt "99" ] ; then
 		echo "Error: Not enough free storage space!"
-		sh press_any_key.sh
+		sh /mnt/us/extensions/kindle_copyparty_kual/press_any_key.sh
 		lipc-set-prop com.lab126.powerd preventScreenSaver 0
 		exit
 	else
@@ -44,7 +44,7 @@ deploy_alpine()
 
 	echo "Extracting to /mnt/us/extensions/kindle_copyparty"
 	echo "This can take a while, please be patient..."
-	sh unzip_progress.sh &
+	sh /mnt/us/extensions/kindle_copyparty_kual/unzip_progress.sh &
 	unzip -o "$BASE_FOLDER/kindle_copyparty.zip" -d "$BASE_FOLDER" 
 
 	echo "Copying service \"kindle_copyparty\" into system"
@@ -56,7 +56,7 @@ deploy_alpine()
 	done
 
 	echo "Install is done!"
-	sh press_any_key.sh
+	sh /mnt/us/extensions/kindle_copyparty_kual/press_any_key.sh
 	lipc-set-prop com.lab126.powerd preventScreenSaver 0
 	exit
 }
@@ -65,7 +65,7 @@ deploy_alpine()
 if [ -f $BASE_FOLDER/kindle_copyparty.ext3 ] ; then
 	echo "Error: alpine.ext already exists. If you want to update Alpine Linux to the latest release for Kindle, you need to delete it first. ATTENTION! This will delete all data inside Alpine!"
 	echo "Press any key to go back to the menu where you have the option to delete."
-	sh press_any_key.sh
+	sh /mnt/us/extensions/kindle_copyparty_kual/press_any_key.sh
 exit
 else
 	deploy_alpine
