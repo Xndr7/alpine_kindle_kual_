@@ -25,7 +25,7 @@ echo "Downloading Alpine Kindle KUAL Launcher from $DOWNLOAD_URL"
 if curl -L $DOWNLOAD_URL --output $TMP_DOWNLOAD ; then
 	# success
 	echo "Deleting current install of Alpine Kindle KUAL Launcher"
-	rm -r "$FOLDER_EXTENSIONS/kindle_copyparty"
+	rm -r "$FOLDER_EXTENSIONS/kindle_copyparty_kual"
 	echo "Extracting to $FOLDER_EXTENSIONS"
 	unzip -q -o $TMP_DOWNLOAD -d $FOLDER_EXTENSIONS
 	rm $TMP_DOWNLOAD
