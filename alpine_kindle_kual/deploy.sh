@@ -1,8 +1,9 @@
 #!/bin/bash
+mkdir -p /mnt/us/extensions/kindle_copyparty
 cd /mnt/us/extensions/kindle_copyparty
 echo "*** Deploying / Updating Alpine Linux ***"
 
-ALPINE_BASE_FOLDER="/mnt/us/extensions/kindle_copyparty/"
+BASE_FOLDER="/mnt/us/extensions/kindle_copyparty"
 
 deploy_alpine()
 {
@@ -28,7 +29,7 @@ deploy_alpine()
 	echo "Checking Storage space"
 	B_REQUIRED="$(unzip -l "$BASE_FOLDER/kindle_copyparty.zip" | tail -1 | cut -d' ' -f1)"
 	KB_REQUIRED="$((B_REQUIRED/1024))"
-	KB_FREE="$(df -k /mnt/us/extensions/kindle_copyparty | awk '{print $4}' | tail -n -1)"
+	KB_FREE="$(df -k $BASE_FOLDER | awk '{print $4}' | tail -n -1)"
 	echo "Required: $KB_REQUIRED kb"
 	echo "Free: $KB_FREE kb"
 	PERCENTAGE_TO_BE_USED="$(($KB_REQUIRED*100/$KB_FREE))"
