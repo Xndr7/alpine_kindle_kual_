@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ALPINE_BASE_FOLDER="/mnt/us"
+ALPINE_BASE_FOLDER="/mnt/us/extensions/kindle_copyparty"
 
 while true; do
 	read -p "Are you sure you want to delete Alpine Linux? This will remove the files /mnt/us/alpine.{ext3,sh,log,conf,zip} and /etc/upstart/alpine.conf (type y or n): " yn
@@ -11,16 +11,16 @@ while true; do
 	esac
 done
 
-rm $ALPINE_BASE_FOLDER/alpine.ext3
-rm $ALPINE_BASE_FOLDER/alpine.sh
-rm $ALPINE_BASE_FOLDER/alpine.log
-rm $ALPINE_BASE_FOLDER/alpine.conf
-rm $ALPINE_BASE_FOLDER/alpine.zip
-while [ -f /etc/upstart/alpine.conf ] ; do
+rm $ALPINE_BASE_FOLDER/kindle_copyparty.ext3
+rm $ALPINE_BASE_FOLDER/kindle_copyparty.sh
+rm $ALPINE_BASE_FOLDER/main.log
+rm $ALPINE_BASE_FOLDER/kindle_copyparty.conf
+rm $ALPINE_BASE_FOLDER/kindle_copyparty.zip
+while [ -f /etc/upstart/kindle_copyparty.conf ] ; do
 	mntroot rw
 	sleep 1
-	rm /etc/upstart/alpine.conf
+	rm /etc/upstart/kindle_copyparty.conf
 	mntroot r
 done
-echo "Deleted Alpine."
+echo "Deleted Kindle Copyparty!"
 sh press_any_key.sh
