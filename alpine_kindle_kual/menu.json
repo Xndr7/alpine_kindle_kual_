@@ -1,7 +1,7 @@
 {
     "items": [
         {
-            "name": "Alpine Linux (no kterm!)",
+            "name": "Kindle Copyparty (no kterm!)",
             "if": "\"kterm\" -ext!",
             "items": [
                 {
@@ -11,26 +11,26 @@
             ]
         },
         {
-            "name": "Alpine Linux",
+            "name": "Kindle Copyparty",
             "if": "\"kterm\" -ext",
             "items": [
                 {
-                    "name": "Deploy newest release of Alpine Linux for Kindle",
+                    "name": "Deploy newest release ",
                     "action": "sh deploy_kterm.sh",
                     "exitmenu": false
                 },
                 {
-                    "name": "Start Alpine Linux Desktop",
-                    "action": "sh start_gui.sh",
+                    "name": "Start ",
+                    "action": "sh start_kindle_copyparty.sh",
                     "exitmenu": false
                 },
                 {
-                    "name": "Drop into Alpine Linux shell",
+                    "name": "Drop into ",
                     "action": "sh drop_into_alpine.sh",
                     "exitmenu": false
                 },
                 {
-                    "name": "Delete Alpine Linux",
+                    "name": "Delete",
                     "action": "sh delete_kterm.sh",
                     "exitmenu": false
                 },
