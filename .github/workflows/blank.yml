@@ -27,7 +27,7 @@ jobs:
 
       - name: Create zip 
         run: |
-          FILE_NAME="alpine_kindle_kual" 
+          FILE_NAME="kindle_copyparty_kual" 
           echo "FILE_NAME=$FILE_NAME" >> $GITHUB_ENV
           sudo zip "$FILE_NAME".zip -r alpine_kindle_kual
 
