@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TMP_DOWNLOAD="/tmp/kindle__copyparty_kual.zip"
-FOLDER_EXTENSIONS="/mnt/us/extensions/"
+FOLDER_EXTENSIONS="/mnt/us/extensions"
 
 press_any_key()
 {
